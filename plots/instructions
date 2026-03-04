@@ -1,0 +1,10 @@
+To run:
+
+install dependencies if not installed alread:
+2) cd plots
+
+run the main.py file
+poetry install
+
+2) run the main.py file
+poetry run python main.py

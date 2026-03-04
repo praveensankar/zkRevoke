@@ -1,0 +1,128 @@
+[
+{
+"numberOfRevokedVCs": 1,
+"tokenSize": 32,
+"gas": 72135,
+"cost": "72135000577080",
+"numberOfTransactions": 1
+},
+{
+"numberOfRevokedVCs": 10,
+"tokenSize": 32,
+"gas": 298974,
+"cost": "298974002391792",
+"numberOfTransactions": 1
+},
+{
+"numberOfRevokedVCs": 100,
+"tokenSize": 32,
+"gas": 2360524,
+"cost": "2360524018884192",
+"numberOfTransactions": 1
+},
+{
+"numberOfRevokedVCs": 1000,
+"tokenSize": 32,
+"gas": 23005050,
+"cost": "23005050184067364",
+"numberOfTransactions": 2
+},
+{
+"numberOfRevokedVCs": 10000,
+"tokenSize": 32,
+"gas": 232732098,
+"cost": "232732100910761760",
+"numberOfTransactions": 11
+},
+{
+"numberOfRevokedVCs": 100000,
+"tokenSize": 32,
+"gas": 2330006778,
+"cost": "2330009128945025850",
+"numberOfTransactions": 101
+},
+{
+"numberOfRevokedVCs": 1,
+"tokenSize": 32,
+"gas": 92802,
+"cost": "92802500759592",
+"numberOfTransactions": 1
+},
+{
+"numberOfRevokedVCs": 10,
+"tokenSize": 32,
+"gas": 298962,
+"cost": "298963254743514",
+"numberOfTransactions": 1
+},
+{
+"numberOfRevokedVCs": 100,
+"tokenSize": 32,
+"gas": 2360584,
+"cost": "2360591719109680",
+"numberOfTransactions": 1
+},
+{
+"numberOfRevokedVCs": 1000,
+"tokenSize": 32,
+"gas": 23005326,
+"cost": "23005385772474756",
+"numberOfTransactions": 2
+},
+{
+"numberOfRevokedVCs": 10000,
+"tokenSize": 32,
+"gas": 232732554,
+"cost": "232733241971555152",
+"numberOfTransactions": 11
+},
+{
+"numberOfRevokedVCs": 100000,
+"tokenSize": 32,
+"gas": 2330006442,
+"cost": "2330883349124020914",
+"numberOfTransactions": 101
+},
+{
+"numberOfRevokedVCs": 1,
+"tokenSize": 32,
+"gas": 92802,
+"cost": "92989981216032",
+"numberOfTransactions": 1
+},
+{
+"numberOfRevokedVCs": 10,
+"tokenSize": 32,
+"gas": 298962,
+"cost": "299432877108480",
+"numberOfTransactions": 1
+},
+{
+"numberOfRevokedVCs": 100,
+"tokenSize": 32,
+"gas": 2360524,
+"cost": "2363420580116208",
+"numberOfTransactions": 1
+},
+{
+"numberOfRevokedVCs": 1000,
+"tokenSize": 32,
+"gas": 23004978,
+"cost": "23027403343544076",
+"numberOfTransactions": 2
+},
+{
+"numberOfRevokedVCs": 10000,
+"tokenSize": 32,
+"gas": 232733610,
+"cost": "232991874505691450",
+"numberOfTransactions": 11
+},
+{
+"numberOfRevokedVCs": 100000,
+"tokenSize": 32,
+"gas": 2330009634,
+"cost": "2660035840311291574",
+"numberOfTransactions": 101
+}
+]

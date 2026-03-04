@@ -1,0 +1,13 @@
+Generate golang bindings for the smart contract:
+
+
+
+solc --abi revocationlist.sol -o bindings/build --overwrite
+
+solc --bin revocationlist.sol -o bindings/build --overwrite
+
+abigen --bin=bindings/build/RevocationList.bin --abi=bindings/build/RevocationList.abi --pkg contracts -type=RevocationList --out=RevocationList.go
+
+
+
+ganache  -l 30000000 --account="0x1c804da8039c8ce928391bc45dad7405615d42e2672fa9fc282cccce246c251a,100000000000000000000000000000"

@@ -1,0 +1,76 @@
+
+
+{
+  "contract" : {
+    "address" : "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    "gasLimit" : "30000000",
+    "gasPrice" : "2000000000",
+    "_comment": "gas price is the average price on March 29, 2025 (https://etherscan.io/gastracker#chart_gasprice)"
+  },
+
+  "issuer" : {
+    "name": "university",
+    "usePreGeneratedKeysAndVCs": "false"
+  },
+  "holder" : {
+    "name": "bob"
+  },
+  "verifier" : {
+    "name": "employer"
+  },
+  "blockchain" : {
+    "rpcEndpoint" : "http://127.0.0.1:8545/",
+    "wsEndPoint" : "ws://127.0.0.1:8545/",
+    "account" : "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+    "privateKey" : "df57089febbacf7ba0bc227dafbffa9fc08a93fdc68e1e42411a14efcf23656e"
+  },
+
+  "logger" : {
+    "env" : "dev",
+    "output": "console",
+    "filename": "logs",
+    "_comment1": "ouput:<console> - for printing in console, <file> - for writing to file",
+    "_comment" : "env is used to configure the logger level at zapper. <dev> for devlopment, <prod> for production "
+  },
+  "mode" : {
+    "debug" : "false"
+  },
+  "run" : {
+    "flow" : "false",
+    "circuit": "false",
+    "irma_test" : "false",
+    "compute_final_result" : "false",
+    "compute_token_storage_cost": "false",
+    "vc_test": "false",
+    "zkp_test": "false",
+    "crypto_test": "false",
+    "generate_vcs": "false"
+  },
+  "selective_disclosure_extension": "false",
+  "benchmark": {
+    "setup": "true",
+    "issuance": "true",
+    "refresh": "true",
+    "revocation": "true",
+    "presentation_verification": "true",
+    "list_commitment": "true",
+    "irma_setup": "true",
+    "irma_revocation": "true",
+    "irma_presentation_and_verification": "true",
+    "circuit_constraints": "true"
+  },
+  "params": {
+    "number_of_experiments": "5",
+    "total_vcs": "1000000",
+    "expiration_period":365,
+    "verification_period": 60,
+    "number_of_tokens_per_circuit": 2,
+    "revocation_rate_base" : "1",
+    "revocation_rate_step" : "4",
+    "revocation_rate_end" : "15",
+    "epoch_duration": 100
+  },
+  "token" : {
+    "numberOfTokensToStore": ["1","10","100","1000","10000","100000"]
+  }
+}

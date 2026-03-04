@@ -1,0 +1,5 @@
+/benchmark/results
+/blockchain-hardhat/node_modules
+/irma/benchmark/results
+/irma/internal
+/plots/__pycache__
