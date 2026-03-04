@@ -3,3 +3,9 @@
 /irma/benchmark/results
 /irma/internal
 /plots/__pycache__
+issuer/vc_data1000000.json
+issuer/vc_data1000.json
+issuer/vc_data50.json
+gnark.pprof
+/plots/graphs
+/plots/graphs
