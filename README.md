@@ -38,18 +38,18 @@ We have performed the experiments on Mac OS 26.3. However, it is possible to run
 Programming Languages: Golang, Python, Solidity.
 
 #### The compilers and interpreters used for the evaluation in the paper
-go v1.23.0
-python >=3.13
-solidity v0.8.28
+* go v1.23.0
+* python >=3.13
+* solidity v0.8.28
 
 #### Other dependencies
-hardhat v2.22.19
-Poetry v2.1.4
+* hardhat v2.22.19
+* Poetry v2.1.4
 
 ### Estimated Time and Storage Consumption
 
-Total time to run the artifact: 1 hour
-Required disk space: 1 GB
+* Total time to run the artifact: 1 hour
+* Required disk space: 1 GB
 
 
 ## Environment 
