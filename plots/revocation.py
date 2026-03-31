@@ -36,7 +36,7 @@ def parse_irma_revocation_result_entry(file):
     path = os.path.realpath(__file__)
     current_dir = os.path.dirname(path)
     dir = os.path.dirname(current_dir)
-    file_path = os.path.join(dir, "IRMA", "benchmark", "results", file)
+    file_path = os.path.join(dir, "irma", "benchmark", "results", file)
 
     with open(file_path) as f:
         json_data = json.load(f)
