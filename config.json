@@ -3,7 +3,7 @@
 {
   "contract" : {
     "address" : "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-    "gasLimit" : "30000000",
+    "gasLimit" : "16000000",
     "gasPrice" : "2000000000",
     "_comment": "gas price is the average price on March 29, 2025 (https://etherscan.io/gastracker#chart_gasprice)"
   },
