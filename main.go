@@ -115,7 +115,7 @@ func main() {
 		benchmark.Benchmark_Revocation(conf)
 	}
 	if conf.Benchmark.Refresh {
-		//benchmark.Benchmark_Refresh(conf)
+		benchmark.Benchmark_Refresh(conf)
 		benchmark.Benchmark_TokenStorageCost(conf)
 	}
 	if conf.Benchmark.Presentation_Verification {
