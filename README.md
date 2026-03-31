@@ -64,7 +64,7 @@ Link to the artifact: https://github.com/praveensankar/zkRevoke
 
 ### Set up the environment
 
-Install the following languages: GoLand and Node.js.
+Install the following languages: GoLang and Node.js.
 
 Then install:
 
