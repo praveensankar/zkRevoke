@@ -215,3 +215,4 @@ Please find documentation at: https://zk-revoke.mintlify.app/introduction
 
 
 ############################################################################################################################
+License details: https://github.com/praveensankar/zkRevoke/blob/main/LICENSE
