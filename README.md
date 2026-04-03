@@ -41,6 +41,7 @@ Programming Languages: Golang, Python, Solidity.
 * go v1.23.0
 * python >=3.13
 * solidity v0.8.28
+* nodejs >= 23.10.0 <= 24.14.1
 
 #### Other dependencies
 * hardhat v2.22.19
