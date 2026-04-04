@@ -46,6 +46,7 @@ Programming Languages: Golang, Python, Solidity.
 #### Other dependencies
 * hardhat v2.22.19
 * Poetry v2.1.4
+& abigen@latest
 
 ### Estimated Time and Storage Consumption
 
@@ -66,6 +67,12 @@ Link to the artifact: https://github.com/praveensankar/zkRevoke
 ### Set up the environment
 
 Install the following languages: GoLang and Node.js.
+
+verify the installation of GoLand and Node.js.
+```bash
+go version
+node -v
+```
 
 Then install:
 
@@ -88,25 +95,19 @@ go install github.com/ethereum/go-ethereum/cmd/abigen@latest
 
 ### Testing the Environment (Required for Functional and Reproduced badges)
 
-verify the installation of GoLand and Node.js.
+Open a terminal and go to the root directory of the project and execute the following:
 ```bash
-go version
-node -v
+chmod +x run_test.sh
+./run_test.sh
 ```
+This command will generate all the results and plots presented in the paper and store them in the following directory:
+```bash
+plots/graphs/
+```
+The filenames of the generated figures and tables include the caption numbers used in the paper.
 
+To perform the manual testing, follow the steps given below:
 
-
-## Artifact Evaluation (Required for Functional and Reproduced badges)
-
-This section includes all the steps required to evaluate the artifact's
-functionality and validate the paper's key results and claims. Therefore, it
-highlights the paper's main results and claims. 
-
-
-### Test Experiments
-
-These steps evaluate the artifact using small parameters to test the working of the complete flow.
-This process takes a few minutes of computation time. 
 
 ####  (a) Run a local blockchain network: 
 Open a terminal and go to the root directory of the project and execute the following:
@@ -141,7 +142,24 @@ The filenames of the generated figures and tables include the caption numbers us
 
 
 
-### Main Experiments
+## Artifact Evaluation (Required for Functional and Reproduced badges)
+
+This section includes all the steps required to evaluate the artifact's
+functionality and validate the paper's key results and claims. Therefore, it
+highlights the paper's main results and claims. 
+
+To evaluate the artifact, open a terminal and go to the root directory of the project and execute the following:
+```bash
+chmod +x run.sh
+./run.sh
+```
+This command will generate all the results and plots presented in the paper and store them in the following directory:
+```bash
+plots/graphs/
+```
+The filenames of the generated figures and tables include the caption numbers used in the paper.
+
+To perform the manual evaluation of the individual components, follow the steps given below:
 
 ####  (a) Run a local blockchain network: 
 Open a terminal and go to the root directory of the project and execute the following:
