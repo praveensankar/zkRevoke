@@ -48,6 +48,12 @@ Programming Languages: Golang, Python, Solidity.
 * Poetry v2.1.4
 * abigen@latest
 
+Hardhat is used to run a local blockchain network. Refer to the official hardhat tutorial if you encounter any errors in the installation of hardhat:
+https://hardhat.org/tutorial/creating-a-new-hardhat-project.
+
+Solc and abigen are used for deploying smart contracts to the hardhat network and interacting with the deployed smart contract.
+Follow the instructions given in https://goethereumbook.org/en/smart-contract-compile/. 
+
 ### Estimated Time and Storage Consumption
 
 * Total time to run the artifact: 1 hour
@@ -105,27 +111,6 @@ These commands will install all the required dependencies; generate all the resu
 plots/graphs/
 ```
 The filenames of the generated figures and tables include the caption numbers used in the paper.
-
-#### Installing dependencies manually
-
-(a) Hardhat - Hardhat is used to run a local blockchain network.
-```bash
-npm install --save-dev hardhat
-npm install --save-dev @nomicfoundation/hardhat-toolbox
-npm install --save-dev @nomicfoundation/hardhat-ignition-ethers
-```
-Refer to the official hardhat tutorial if you encounter any errors in the installation of hardhat:
-https://hardhat.org/tutorial/creating-a-new-hardhat-project
-
-(b) Solc, abigen - Solc and abigen are used for deploying smart contracts to the hardhat network and interacting with the deployed smart contract.
-
-Follow the instructions given in https://goethereumbook.org/en/smart-contract-compile/. The abigen tool can be installed using the following command:
-
-```bash
-go install github.com/ethereum/go-ethereum/cmd/abigen@latest
-```
-
-
 
 
 
