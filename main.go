@@ -6,6 +6,7 @@ package main
 
 import (
 	"crypto/rand"
+	"flag"
 	"fmt"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -64,7 +65,9 @@ func SetupLogger(conf config.Config) {
 
 func main() {
 
-	conf, err := config.ParseConfig()
+	test := flag.Bool("test", false, "enable debug mode")
+	flag.Parse()
+	conf, err := config.ParseConfig(test)
 	conf.InitialTimestamp = time.Now()
 	if err != nil {
 		zap.S().Infoln("error parsing config: ", err)

@@ -328,6 +328,7 @@ def plot_issuer_bandwidth_revocation(totalVCs, revocationRate, downsample_rate):
     plt.tight_layout()
     ax3.set_yscale('symlog', linthresh=1)
 
+
     for i in  range(len(ypointsZKRevoke[index])):
         # if revocationRate==1 and i==0:
         #     ax3.annotate((str(np.ceil(xpoints[i])), str(np.round(ypointsZKRevoke[index][i], 2))+"KB"), (xpoints[i], ypointsZKRevoke[index][i]), xytext=(5, -8), textcoords='offset points',
@@ -375,6 +376,12 @@ def plot_issuer_bandwidth_revocation(totalVCs, revocationRate, downsample_rate):
         figNumber = "a"
     if revocationRate==5:
         figNumber = "b"
+
+    if totalVCs!=1000000:
+        for child in ax3.get_children():
+            if isinstance(child, plt.Annotation):
+                child.set_visible(False)
+
     filename = "graphs/fig_2"+figNumber+"_result_revocation_issuer_bandwidth_without_repition_r"+str(revocationRate)+".png"
     fig3.savefig(filename, bbox_inches='tight')
 
@@ -533,6 +540,8 @@ def plot_issuer_computation_revocation(totalVCs, revocationRate, downsample_rate
 
 
     fig3, ax3 = plt.subplots(layout='constrained')
+
+
     plt.tight_layout()
     # for i in  range(len(ypointsZKRevoke[index])):
     #     if  i==0 or i==5:
@@ -610,6 +619,11 @@ def plot_issuer_computation_revocation(totalVCs, revocationRate, downsample_rate
     plt.tight_layout()
     ax3.set_xlabel(r'Epochs', font, fontsize=14)
     ax3.set_ylabel('Issuer: computation (in ms)', font, fontsize=14)
+
+    if totalVCs!=1000000:
+        ann = ax3.annotate('Text', xy=(1, 1))
+    ann.remove()
+
     # ax3.set_title(title)
     ax3.legend(fontsize="9", framealpha=0.3)
     filename = "graphs/result_revocation_time_"+str(revocationRate)+".png"

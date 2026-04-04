@@ -61,15 +61,15 @@
     "circuit_constraints": "true"
   },
   "params": {
-    "number_of_experiments": "5",
-    "total_vcs": "1000000",
-    "expiration_period":365,
-    "verification_period": 60,
+    "number_of_experiments": "2",
+    "total_vcs": "25000",
+    "expiration_period":50,
+    "verification_period": 5,
     "number_of_tokens_per_circuit": 2,
     "revocation_rate_base" : "1",
     "revocation_rate_step" : "4",
     "revocation_rate_end" : "15",
-    "epoch_duration": 100
+    "epoch_duration": 30
   },
   "token" : {
     "numberOfTokensToStore": ["1","10","100","1000","10000","100000"]

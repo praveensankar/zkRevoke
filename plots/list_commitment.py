@@ -478,6 +478,12 @@ def plot_issuer_computation_revocation_including_commitment(totalVCs, revocation
     ax3.set_ylabel('Issuer: computation (in ms)', font, fontsize=14)
     # ax3.set_title(title)
     ax3.legend(fontsize="9", framealpha=0.3)
+
+    if totalVCs!=1000000:
+        for child in ax3.get_children():
+            if isinstance(child, plt.Annotation):
+                child.set_visible(False)
+
     filename = "graphs/fig_2c_result_revocation_computation_including_commitment_"+str(revocationRate)+".png"
     fig3.set_size_inches(4, 3)
     fig3.savefig(filename,  bbox_inches='tight')

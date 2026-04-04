@@ -261,6 +261,8 @@ def plot_circuit_size(downsample_rate):
     ylabel_string = f"time (in ms)"
     ax2.set_ylabel(ylabel_string, font, fontsize=14)
     ax2.legend(fontsize="11", framealpha=0.3)
+
+
     fig2.set_size_inches(5, 3)
     fig2.savefig("graphs/fig_5b_result_circuit_time.png", bbox_inches='tight')
     #

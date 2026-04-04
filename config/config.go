@@ -29,6 +29,7 @@ type Config struct {
 	LoggerFile                   string
 	LoggerOutputMode             string
 	DEBUG                        bool
+	TEST                         bool
 	TokenStorageCostExps         uint
 	TokenStorageNumberOfTokens   []int
 	PKI                          utils.PublicParams
@@ -88,13 +89,17 @@ func setupConfig() {
 ParseConfig reads the configuration inputs from the config.json file
 and sets the configuration
 */
-func ParseConfig() (Config, error) {
+func ParseConfig(test *bool) (Config, error) {
 
 	zap.S().Info("Loading configuration file")
 
 	viper.SetConfigType("json")
 	viper.AddConfigPath(".")
-	viper.SetConfigFile("config.json") // name of config file (without extension)
+	if *test {
+		viper.SetConfigFile("test_config.json")
+	} else {
+		viper.SetConfigFile("config.json") // name of config file (without extension)
+	}
 	config := Config{}
 	err := viper.ReadInConfig()
 	if err != nil {
@@ -114,6 +119,7 @@ func ParseConfig() (Config, error) {
 	config.LoggerFile = viper.GetString("logger.filename")
 
 	config.DEBUG = viper.GetBool("mode.debug")
+	config.TEST = viper.GetBool("mode.test")
 
 	config.TokenStorageNumberOfTokens = viper.GetIntSlice("token.numberOfTokensToStore")
 	config.TokenStorageCostExps = viper.GetUint("token.numberOfExps")

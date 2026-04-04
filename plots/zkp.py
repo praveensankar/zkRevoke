@@ -360,6 +360,12 @@ def plot_zkp_proof_gen_time(totalVCs, downsample_rate):
     ax1.set_ylabel('ZK proof gen. time (in ms)', font, fontsize=14)
     ax1.set_xlabel(r'VP verification period:  m (in epochs)', font, fontsize=14)
     ax1.legend(fontsize="10", framealpha=0.3)
+
+    if totalVCs!=1000000:
+        for child in ax1.get_children():
+            if isinstance(child, plt.Annotation):
+                child.set_visible(False)
+
     fig1.set_size_inches(3.5, 3)
     filename = "graphs/fig_4b_result_zkp_proof_gen_time"+".png"
     fig1.savefig(filename, bbox_inches='tight')
@@ -493,6 +499,13 @@ def plot_zkp_proof_size(totalVCs, downsample_rate):
     ax1.set_xlabel(r'VP verification period:  m (in epochs)', font, fontsize=14)
 
     ax1.legend(fontsize="10", framealpha=0.3)
+
+    if totalVCs!=1000000:
+        for child in ax1.get_children():
+            if isinstance(child, plt.Annotation):
+                child.set_visible(False)
+
+
     fig1.set_size_inches(3.5, 3)
     filename = "graphs/fig_4a_result_zkp_proof_size"+".png"
     fig1.savefig(filename, bbox_inches='tight')
@@ -605,6 +618,13 @@ def plot_zkp_proof_ver_time(totalVCs, downsample_rate):
     ax1.set_xlabel(r'VP verification period:  m (in epochs)', font, fontsize=14)
     ax1.set_ylabel('time (in ms)', font, fontsize=14)
     ax1.legend(fontsize="11", framealpha=0.3)
+
+    if totalVCs!=1000000:
+        for child in ax1.get_children():
+            if isinstance(child, plt.Annotation):
+                child.set_visible(False)
+
+
     fig1.set_size_inches(3.5, 3)
     filename = "graphs/fig_4c_result_zkp_proof_ver_time"+".png"
     fig1.savefig(filename, bbox_inches='tight')

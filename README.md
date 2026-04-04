@@ -102,7 +102,82 @@ This section includes all the steps required to evaluate the artifact's
 functionality and validate the paper's key results and claims. Therefore, it
 highlights the paper's main results and claims. 
 
-### workload
+
+### Test Experiments
+
+These steps evaluate the artifact using small parameters to test the working of the complete flow.
+This process takes a few minutes of computation time. 
+
+####  (a) Run a local blockchain network: 
+Open a terminal and go to the root directory of the project and execute the following:
+```bash
+cd blockchain-hardhat
+npx hardhat node
+```
+
+#### (b) Run the golang program
+Open a terminal and go to the root directory of the project and execute the following:
+```bash
+go run zkrevoke --test
+```
+This command will generate results and store them in the following directories:
+```bash
+benchmark/results/
+irma/benchmark/results/
+```
+
+#### (c) Plot the results
+Open a terminal and go to the root directory of the project and execute the following:
+```bash
+cd plots
+poetry install --no-root 
+poetry run python main.py --test
+```
+These commands will generate plots and tables used in the paper and store them in the following directory:
+```bash
+plots/graphs/
+```
+The filenames of the generated figures and tables include the caption numbers used in the paper.
+
+
+
+### Main Experiments
+
+####  (a) Run a local blockchain network: 
+Open a terminal and go to the root directory of the project and execute the following:
+```bash
+cd blockchain-hardhat
+npx hardhat node
+```
+
+#### (b) Run the golang program
+Open a terminal and go to the root directory of the project and execute the following:
+```bash
+go run zkrevoke
+```
+This command will generate results and store them in the following directories:
+```bash
+benchmark/results/
+irma/benchmark/results/
+```
+
+#### (c) Plot the results
+Open a terminal and go to the root directory of the project and execute the following:
+```bash
+cd plots
+poetry install --no-root 
+poetry run python main.py
+```
+These commands will generate plots and tables used in the paper and store them in the following directory:
+```bash
+plots/graphs/
+```
+The filenames of the generated figures and tables include the caption numbers used in the paper.
+
+
+
+
+### workload used for the results in the paper
 
 
 + total number of issued VCs (n): 1 million
@@ -162,41 +237,6 @@ In the ZK circuit, the hash-related conditions require 661 constraints, whereas 
 
 #### Main Result 10: Groth16 Overhead
 we evaluate the overhead of the Groth16 scheme by considering the performance of the “empty” circuit instantiated without any conditions. The witness and proof generation for the empty circuit add 5% and 1.5% overhead respectively compared to the complete circuit, whereas proof verification for the empty circuit requires almost the same amount of time as for the complete circuit. The results are stored in the file: (a) plots/graphs/table_5:Groth16_Overhead.png. We report these results in "Table 5" of our paper.
-
-
-### Experiments
-
-####  (a) Run a local blockchain network: 
-Open a terminal and go to the root directory of the project and execute the following:
-```bash
-cd blockchain-hardhat
-npx hardhat node
-```
-
-#### (b) Run the golang program
-Open a terminal and go to the root directory of the project and execute the following:
-```bash
-go run zkrevoke
-```
-This command will generate results and store them in the following directories:
-```bash
-benchmark/results/
-irma/benchmark/results/
-```
-
-#### (c) Plot the results
-Open a terminal and go to the root directory of the project and execute the following:
-```bash
-cd plots
-poetry install --no-root 
-poetry run python main.py
-```
-These commands will generate plots and tables used in the paper and store them in the following directory:
-```bash
-plots/graphs/
-```
-The filenames of the generated figures and tables include the caption numbers used in the paper.
-
 
 
 ## Limitations 
