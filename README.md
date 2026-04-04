@@ -56,8 +56,9 @@ Follow the instructions given in https://goethereumbook.org/en/smart-contract-co
 
 ### Estimated Time and Storage Consumption
 
+* Total time to run the testing: less than 5 minutes
 * Total time to run the artifact: 1 hour
-* Required disk space: 1 GB
+* Required disk space for the artifact: 1 GB
 
 
 ## Environment 
