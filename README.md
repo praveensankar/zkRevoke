@@ -54,8 +54,12 @@ https://hardhat.org/tutorial/creating-a-new-hardhat-project.
 Solc and abigen are used for deploying smart contracts to the hardhat network and interacting with the deployed smart contract.
 Follow the instructions given in https://goethereumbook.org/en/smart-contract-compile/. 
 
+Poetry is a tool for dependency management and packaging in Python. Poetry is used to run the python programs to generate plots.
+Read the instructions in the following link to install poetry: https://python-poetry.org/docs/#installation.
+
 ### Estimated Time and Storage Consumption
 
+* Total time to install the dependencies: less than 2 hours
 * Total time to run the testing: less than 5 minutes
 * Total time to run the artifact: 1 hour
 * Required disk space for the artifact: 1 GB
