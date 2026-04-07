@@ -267,7 +267,8 @@ The artifact can be deployed in any operating system. Since we have evaluated in
 
 Please find documentation at: https://zk-revoke.mintlify.app/introduction
 
-
 ############################################################################################################################
+
+The artifact is integrated with zapper, a logging tool. The logs can be stored in files by changing the parameter "logger:ouput" to "file" instead of "console" in config.json and test_config.json.
 
 License details: https://github.com/praveensankar/zkRevoke/blob/main/LICENSE
