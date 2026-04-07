@@ -204,7 +204,20 @@ The filenames of the generated figures and tables include the caption numbers us
 
 ## Main Results and Claims
 
-
+The table lists down main results and the corresponding output files. The output files are stored in the directory `plots\graphs`.
+| Result | Output File |
+| ------------- | ------------- |
+| Main Result 1: Holder’s Bandwidth  | fig_1c_result_one_time_sharing_holder_bandwidth.png  |
+| Main Result 2: Holder’s Computation  | (a) fig_1a_result_one_time_sharing_computation.png, and (b) fig_1b_result_one_time_sharing_computation_irma_k_2.png |
+| Main Result 3: Issuer's Bandwidth  | (a) fig_2a_result_revocation_issuer_bandwidth_without_repition_r1.png, and (b) fig_2b_result_revocation_issuer_bandwidth_without_repition_r5.png |
+| Main Result 4: Issuer's Computation  | fig_2c_result_revocation_computation_including_commitment_1.png |
+| Main Result 5: Verifier's computation for the verification of commitment   | fig_3_result_list_commitment_verification_time.png |
+| Main Result 6: ZK Proof size  | fig_4a_result_zkp_proof_size.png|
+| Main Result 7: ZK Proof Generation Time  | fig_4b_result_zkp_proof_gen_time.png|
+| Main Result 8: ZK Proof Verification Time  | fig_4c_result_zkp_proof_ver_time.png|
+| Main Result 9: ZK Circuit  | (a) fig_5a_result_circuit_size.png and (b) fig_5a_result_circuit_time.png |
+| Main Result 10: ZK Circuit Breakdown  | table_4:Circuit_Constraints_Breakdown.png |
+| Main Result 11: Groth16 Overhead  | table_5:Groth16_Overhead.png |
 
 #### Main Result 1: Holder’s Bandwidth
 
@@ -224,20 +237,20 @@ has to recompute tokens for all revoked VCs after each epoch. In the experiment,
 #### Main Result 5: Verifier's computation for the verification of commitment 
 The time to verify the commitment is on the order of microseconds even for higher revocation rates, which is insignificant compared to the computation requirements for verification of proofs in a VP. In the experiment, we change the current epoch (e) linearly, from 1 to 365, and we measure the verifier's computation requirements. The results are stored in the file: plots/graphs/fig_3_result_list_commitment_verification_time.png. We report these results in "Figure 3" of our paper.
 
-#### Main Result 5: ZK Proof size
+#### Main Result 6: ZK Proof size
 The size of a ZK proof in zkRevoke is 164 bytes, whereas the size of a non-revocation proof in IRMA is 1831 bytes. zkRevoke requires 11x less bandwidth for proofs, compared to IRMA.
 In the experiment, we change the verification period (m) linearly, from 1 to 60, and we measure the proof size. The results are stored in the file: plots/graphs/fig_4a_result_zkp_proof_size.png. We report these results in "Figure 4a" of our paper.
 
-#### Main Result 6: ZK Proof Generation Time.
+#### Main Result 7: ZK Proof Generation Time.
 The proof generation time in IRMA is 10x faster than the proof generation time in zkRevoke.
-In the experiment, we change the verification period (m) linearly, from 1 to 60, and we measure the time to generation ZK proofs. The results are stored in the file: plots/graphs/fig_4a_result_zkp_proof_gen_time.png. We report these results in "Figure 4b" of our paper.
+In the experiment, we change the verification period (m) linearly, from 1 to 60, and we measure the time to generation ZK proofs. The results are stored in the file: plots/graphs/fig_4b_result_zkp_proof_gen_time.png. We report these results in "Figure 4b" of our paper.
 
-#### Main Result 7: ZK Proof Verification Time.
+#### Main Result 8: ZK Proof Verification Time.
 The proof verification time in zkRevoke is 6x faster than the proof generation time in
 IRMA.
-In the experiment, we change the verification period (m) linearly, from 1 to 60, and we measure the time to verify all ZK proofs for a VP. The results are stored in the file: plots/graphs/fig_4a_result_zkp_proof_ver_time.png. We report these results in "Figure 4c" of our paper.
+In the experiment, we change the verification period (m) linearly, from 1 to 60, and we measure the time to verify all ZK proofs for a VP. The results are stored in the file: plots/graphs/fig_4c_result_zkp_proof_ver_time.png. We report these results in "Figure 4c" of our paper.
 
-#### Main Result 8: ZK Circuit
+#### Main Result 9: ZK Circuit
 To generate and verify proofs, ZK circuits are one of the parameters in zkRevoke, whereas public keys are sufficient in IRMA. In IRMA, the ZKP scheme is designed as a
 digital signature scheme and enables holders and verifiers to use
 public keys to generate and verify proofs. IRMA outperforms zkRevoke since public keys are shorter in size and take a significantly smaller amount of time to generate
@@ -245,10 +258,10 @@ compared to ZK circuits.
 The size of a ZK proof in zkRevoke is 164 bytes, whereas the size of a non-revocation proof in IRMA is 1831 bytes. zkRevoke requires 11x less bandwidth for proofs, compared to IRMA.
 In the experiment, we change the number of tokens per circuit (k) linearly, from 1 to 60 and compare the size and generation time.  The results are stored in the file: (a) plots/graphs/fig_5a_result_circuit_size.png and (b) plots/graphs/fig_5a_result_circuit_time.png. We report these results in "Figure 5a" and "Figure 5b" of our paper.
 
-#### Main Result 9: ZK Circuit Breakdown
+#### Main Result 10: ZK Circuit Breakdown
 In the ZK circuit, the hash-related conditions require 661 constraints, whereas signature verification requires 7993 constraints. This indicates that signature verification is a dominant part (85.8%) of the circuit. The results are stored in the file: (a) plots/graphs/table_4:Circuit_Constraints_Breakdown.png. We report these results in "Table 4" of our paper.
 
-#### Main Result 10: Groth16 Overhead
+#### Main Result 11: Groth16 Overhead
 we evaluate the overhead of the Groth16 scheme by considering the performance of the “empty” circuit instantiated without any conditions. The witness and proof generation for the empty circuit add 5% and 1.5% overhead respectively compared to the complete circuit, whereas proof verification for the empty circuit requires almost the same amount of time as for the complete circuit. The results are stored in the file: (a) plots/graphs/table_5:Groth16_Overhead.png. We report these results in "Table 5" of our paper.
 
 
