@@ -72,14 +72,36 @@ Link to the artifact: https://github.com/praveensankar/zkRevoke
 
 ### Set up the environment
 
-Install the following languages: GoLang and Node.js.
+
+First, install the following languages: GoLang, Node.js, python.
 
 verify the installation of GoLand and Node.js.
 ```bash
 go version
 node -v
+python3 --version
 ```
 
+Then, install the required dependencies. Open a terminal, go to the root directory of the project and execute the following:
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+This command will install all the required dependencies. To install the dependencies manually, open a terminal, go to the root directory of the project
+and execute the following: 
+```bash
+cd blockchain-hardhat
+npm install --save-dev hardhat
+npm install --save-dev @nomicfoundation/hardhat-toolbox
+npm install --save-dev @nomicfoundation/hardhat-ignition-ethers
+
+cd ..
+go install github.com/ethereum/go-ethereum/cmd/abigen@latest
+
+cd plots
+poetry install --no-root
+```
 
 ### Testing the Environment (Required for Functional and Reproduced badges)
 
@@ -93,20 +115,17 @@ To test the artifact manually, follow the next steps. First, run a local blockch
 
 ```bash
 cd blockchain-hardhat
-npm install --save-dev hardhat
-npm install --save-dev @nomicfoundation/hardhat-toolbox
-npm install --save-dev @nomicfoundation/hardhat-ignition-ethers
 npx hardhat node &
+
 cd ..
-go install github.com/ethereum/go-ethereum/cmd/abigen@latest
 go run zkrevoke --test
+
 cd plots
-poetry install --no-root 
 poetry run python main.py --test
 ```
 
 
-These commands will install all the required dependencies; generate all the results and plots presented in the paper; and store them in the following directory:
+These commands will generate all the results and plots presented in the paper; and store them in the following directory:
 ```bash
 plots/graphs/
 ```
@@ -131,19 +150,16 @@ chmod +x run.sh
 To test the artifact manually, follow the next steps. First, run a local blockchain network. Then, execute the main program. After that plot the results.
 ```bash
 cd blockchain-hardhat
-npm install --save-dev hardhat
-npm install --save-dev @nomicfoundation/hardhat-toolbox
-npm install --save-dev @nomicfoundation/hardhat-ignition-ethers
 npx hardhat node &
+
 cd ..
-go install github.com/ethereum/go-ethereum/cmd/abigen@latest
 go run zkrevoke 
+
 cd plots
-poetry install --no-root 
 poetry run python main.py 
 ```
 
-These commands will install all the required dependencies; generate all the results and plots presented in the paper; and store them in the following directory:
+These commands will generate all the results and plots presented in the paper; and store them in the following directory:
 ```bash
 plots/graphs/
 ```
