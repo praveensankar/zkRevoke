@@ -10,6 +10,7 @@ from token_storage_cost import *
 from revocation import *
 import argparse
 import os
+from pathlib import Path
 
 
 def get_total_vcs_from_config():
@@ -40,6 +41,9 @@ def get_total_vcs_from_config():
 
 
 def main():
+
+    # create a folder called "graphs" to store the graphs
+    Path("graphs").mkdir(parents=True, exist_ok=True)
 
     totalVCs = get_total_vcs_from_config()
     print(totalVCs)
