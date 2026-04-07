@@ -1,0 +1,36 @@
+[tools]
+node = "24"
+go = "1.24.0"
+python = "latest"
+
+
+
+[tasks.build]
+description = "Install dependencies and build the project"
+run = [
+    "cd blockchain-hardhat && npm install --save-dev hardhat",
+    "cd blockchain-hardhat && npm install --save-dev @nomicfoundation/hardhat-toolbox",
+    "cd blockchain-hardhat && npm install --save-dev @nomicfoundation/hardhat-ignition-ethers",
+    "go install github.com/ethereum/go-ethereum/cmd/abigen@latest",
+    "cd plots && pipx install poetry",
+    "cd plots && poetry install --no-root",
+    "echo 'Build complete!'"
+]
+
+[tasks.test]
+description = "Testing the artifact"
+run = [
+    "cd blockchain-hardhat && npx hardhat node &",
+    "go run zkrevoke --test",
+    "cd plots && poetry run python main.py --test",
+    "echo 'Test complete!'"
+]
+
+[tasks.run]
+description = "Running the artifact"
+run = [
+    "cd blockchain-hardhat && npx hardhat node &",
+    "go run zkrevoke",
+    "cd plots && poetry run python main.py",
+    "echo 'Test complete!'"
+]
