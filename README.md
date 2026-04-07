@@ -44,12 +44,12 @@ Programming Languages: Golang, Python, Solidity.
 * nodejs >= 23.10.0 <= 24.14.1
 
 #### Other dependencies
-* mice 
+* mise 
 * hardhat v2.22.19
 * Poetry v2.1.4
 * abigen@latest
 
-**mice** is a development environment setup tool. It is used for automating the setup, testing and execution of the artifact. Refer to the official 
+**mise** is a development environment setup tool. It is used for automating the setup, testing and execution of the artifact. Refer to the official 
 website for more details: https://mise.jdx.dev/about.html.
 
 
@@ -81,7 +81,7 @@ Link to the artifact: https://github.com/praveensankar/zkRevoke
 
 ## Set up, Testing and Execution of the artifact (Required for Functional and Reproduced badges)
 
-The development environment setup tool **mice** is used for performing setup, test and execution of the artifact. 
+The development environment setup tool **mise** is used for performing setup, test and execution of the artifact. 
 This section includes all the steps required to evaluate the artifact's
 functionality and validate the paper's key results and claims.
 
@@ -89,17 +89,17 @@ functionality and validate the paper's key results and claims.
 Open a terminal, go to the root directory of the project and execute the following:
 
 ```bash
-mice run build
-mice run test
-mice run run
+mise run build
+mise run test
+mise run run
 ```
 
 
-`mice run build` installs the required languages and dependencies. 
+`mise run build` installs the required languages and dependencies. 
 
-`mice run test` tests the artifact by using a smaller workload. This command generates all the results and plots; and store them in the following directory:  `plots\graphs`.
+`mise run test` tests the artifact by using a smaller workload. This command generates all the results and plots; and store them in the following directory:  `plots\graphs`.
 
-`mice run run` executes the artifact using the full workload used in the paper. This command generates all the results and plots presented in the paper; and store them in the following directory:  `plots\graphs`.
+`mise run run` executes the artifact using the full workload used in the paper. This command generates all the results and plots presented in the paper; and store them in the following directory:  `plots\graphs`.
 
 #### workload used for the results in the paper
 
