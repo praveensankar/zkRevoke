@@ -38,22 +38,26 @@ We have performed the experiments on Mac OS 26.3. However, it is possible to run
 Programming Languages: Golang, Python, Solidity.
 
 #### The compilers and interpreters used for the evaluation in the paper
-* go v1.23.0
+* go @latest
 * python >=3.13
 * solidity v0.8.28
 * nodejs >= 23.10.0 <= 24.14.1
 
 #### Other dependencies
+* mice 
 * hardhat v2.22.19
 * Poetry v2.1.4
 * abigen@latest
+
+**mice** is a development environment setup tool. It is used for automating the setup, testing and execution of the artifact. Refer to the official 
+website for more details: https://mise.jdx.dev/about.html.
+
 
 Hardhat is used to run a local blockchain network. Refer to the official hardhat tutorial if you encounter any errors in the installation of hardhat:
 https://hardhat.org/tutorial/creating-a-new-hardhat-project.
 
 Solc and abigen are used for deploying smart contracts to the hardhat network and interacting with the deployed smart contract.
 Follow the instructions given in https://goethereumbook.org/en/smart-contract-compile/. 
-
 Poetry is a tool for dependency management and packaging in Python. Poetry is used to run the python programs to generate plots.
 Read the instructions in the following link to install poetry: https://python-poetry.org/docs/#installation.
 
@@ -75,12 +79,42 @@ everything and how to verify that everything is set up correctly.
 
 Link to the artifact: https://github.com/praveensankar/zkRevoke
 
-### Set up the environment
+## Set up, Testing and Execution of the artifact (Required for Functional and Reproduced badges)
+
+The development environment setup tool **mice** is used for performing setup, test and execution of the artifact. 
+This section includes all the steps required to evaluate the artifact's
+functionality and validate the paper's key results and claims.
 
 
-First, install the following languages: GoLang, Node.js, python.
+Open a terminal, go to the root directory of the project and execute the following:
 
-verify the installation of GoLand and Node.js.
+```bash
+mice run build
+mice run test
+mice run run
+```
+
+
+`mice run build` installs the required languages and dependencies. 
+`mice run test` tests the artifact by using a smaller workload. This command generates all the results and plots; and store them in the following directory:  `plots\graphs`
+`mice run run` executes the artifact using the full workload used in the paper. This command generates all the results and plots presented in the paper; and store them in the following directory:  `plots\graphs`.
+
+#### workload used for the results in the paper
+
+
++ total number of issued VCs (n): 1 million
++ expiration period of VCs: 365
++ epoch duration: 1 
++ revocation rate (R): 1% to 15%
++ revoke a fixed number ($r = (10^6*\mathcal{R})/(100*365)$)  of randomly choosen VCs in each epoch
++ verification period of a VP (m): 1 day to 60
++ we consider the values of k from $1$ to $2^5$
+
+
+### Manual Set up, Testing and Execution of the artifact (Required for Functional and Reproduced badges)  
+
+#### Manual Set up
+Install Golang, Node.js and Python. Verify the installation of GoLang and Node.js.
 ```bash
 go version
 node -v
@@ -93,7 +127,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-This command will install all the required dependencies. To install the dependencies manually, open a terminal, go to the root directory of the project
+This command will install all the required dependencies. To install the dependencies separately, open a terminal, go to the root directory of the project
 and execute the following: 
 ```bash
 cd blockchain-hardhat
@@ -108,7 +142,7 @@ cd plots
 poetry install --no-root
 ```
 
-### Testing the Environment (Required for Functional and Reproduced badges)
+#### Manual Testing
 
 Open a terminal and go to the root directory of the project and execute the following:
 ```bash
@@ -116,7 +150,7 @@ chmod +x run_test.sh
 ./run_test.sh
 ```
 
-To test the artifact manually, follow the next steps. First, run a local blockchain network. Then, execute the main program. After that plot the results.
+To test the components separately, follow the next steps. First, run a local blockchain network. Then, execute the main program. After that plot the results.
 
 ```bash
 cd blockchain-hardhat
@@ -129,7 +163,6 @@ cd plots
 poetry run python main.py --test
 ```
 
-
 These commands will generate all the results and plots presented in the paper; and store them in the following directory:
 ```bash
 plots/graphs/
@@ -137,13 +170,8 @@ plots/graphs/
 The filenames of the generated figures and tables include the caption numbers used in the paper.
 
 
+#### Manual Execution
 
-
-## Artifact Evaluation (Required for Functional and Reproduced badges)
-
-This section includes all the steps required to evaluate the artifact's
-functionality and validate the paper's key results and claims. Therefore, it
-highlights the paper's main results and claims. 
 
 To evaluate the artifact, open a terminal and go to the root directory of the project and execute the following:
 ```bash
@@ -152,7 +180,7 @@ chmod +x run.sh
 ```
 
 
-To test the artifact manually, follow the next steps. First, run a local blockchain network. Then, execute the main program. After that plot the results.
+To evaluate the components separately, follow the next steps. First, run a local blockchain network. Then, execute the main program. After that plot the results.
 ```bash
 cd blockchain-hardhat
 npx hardhat node &
@@ -172,20 +200,7 @@ The filenames of the generated figures and tables include the caption numbers us
 
 
 
-
-### workload used for the results in the paper
-
-
-+ total number of issued VCs (n): 1 million
-+ expiration period of VCs: 365
-+ epoch duration: 1 
-+ revocation rate (R): 1% to 15%
-+ revoke a fixed number ($r = (10^6*\mathcal{R})/(100*365)$)  of randomly choosen VCs in each epoch
-+ verification period of a VP (m): 1 day to 60
-+ we consider the values of k from $1$ to $2^5$
-
-
-### Main Results and Claims
+## Main Results and Claims
 
 
 
