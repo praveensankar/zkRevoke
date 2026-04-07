@@ -96,7 +96,9 @@ mice run run
 
 
 `mice run build` installs the required languages and dependencies. 
-`mice run test` tests the artifact by using a smaller workload. This command generates all the results and plots; and store them in the following directory:  `plots\graphs`
+
+`mice run test` tests the artifact by using a smaller workload. This command generates all the results and plots; and store them in the following directory:  `plots\graphs`.
+
 `mice run run` executes the artifact using the full workload used in the paper. This command generates all the results and plots presented in the paper; and store them in the following directory:  `plots\graphs`.
 
 #### workload used for the results in the paper
